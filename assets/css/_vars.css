@@ -1,2 +1,9 @@
 @import '../../node_modules/postcss-joqd/__vars.css';
 @import '../../node_modules/postcss-gorbeh/__vars.css';
+
+$tangerine_yellow: #FFC80B;
+$aero_blue: #BBE0CA;
+$rum_swizzle: #F3F0D6;
+$nero: #222121;
+
+$round-border-radius: 4rem;
