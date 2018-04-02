@@ -23,3 +23,5 @@ h3, .h3{font-family: 'Arvo', serif}
 .UPPERCASE{text-transform: uppercase}
 
 .smooth{transition: all .2s ease-out}
+
+.no-list{list-style: none}

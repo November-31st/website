@@ -9,11 +9,11 @@
       <slot></slot>
     </span>
   </a>
-    <span v-else-if="!to && !href" :class="['button smooth', className]" @click="$emit('onClick')">
-      <span>
-        <slot></slot>
-      </span>
+  <span v-else-if="!to && !href" :class="['button smooth', className]" @click="$emit('onClick')">
+    <span>
+      <slot></slot>
     </span>
+  </span>
 </template>
 
 <script>

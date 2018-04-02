@@ -27,5 +27,5 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode: multiply;
-    padding: calc($gutter * 2) *}
+    padding: calc($gutter * 4) * calc($gutter * 2)}
 </style>

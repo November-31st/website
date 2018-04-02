@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="button-wrapper all-12">
-    <j-button className="large rum_swizzle grey-darken-2-text UPPERCASE round-corner">get your awesome shit</j-button>
+    <j-button className="large rum_swizzle grey-darken-2-text UPPERCASE round-corner">get yourslef an awesome shit</j-button>
   </div>
 </template>
 
