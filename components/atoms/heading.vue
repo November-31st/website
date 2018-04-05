@@ -1,7 +1,7 @@
 <template lang="html">
   <h2 :class="['Capitalize relative', className]">
     <slot></slot>
-    <span class="hr"></span>
+    <span :class="['hr', hrColor]"></span>
   </h2>
 </template>
 
@@ -9,6 +9,10 @@
   export default {
     props: {
       className: {
+        type: String,
+        default: ''
+      },
+      hrColor: {
         type: String,
         default: ''
       }
@@ -26,7 +30,6 @@
     line-height: 1.4;
     .hr{
       content: '';
-      background: $tangerine_yellow;
       position: absolute;
       right: 0; left: 0;
       bottom: calc($gutter * 1.5);
