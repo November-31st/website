@@ -13,6 +13,7 @@
 <style scoped>
   @import "../../assets/css/_vars.css";
   .heading-wrapper{
+    margin-top: calc($gutter * 2);
     h1{
       text-shadow: 0 0 27rem $nero, 0 0 9rem $nero;
       font-size: 7.2rem;

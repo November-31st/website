@@ -17,7 +17,6 @@
   @import "../../assets/css/_vars.css";
   .button-wrapper{
     margin-top: calc($gutter * 2);
-    margin-bottom: calc($gutter * -2);
     .button{
       box-shadow: 0 0 0 calc($gutter / 2) color($rum_swizzle a(30%));
       &:hover{box-shadow: 0 0 0 calc($gutter / 6) $rum_swizzle}
