@@ -16,5 +16,5 @@
     padding-top: 40%;
     transform: skewY(-10deg);
     background: linear-gradient(40deg, transparent 40%, $rum_swizzle 240%);
-  }
+    user-select: none}
 </style>

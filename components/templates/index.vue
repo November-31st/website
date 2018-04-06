@@ -2,16 +2,19 @@
   <main class="container-narrow">
     <hero/>
     <about/>
+    <testimonials/>
   </main>
 </template>
 
 <script>
   import hero from '~organism/hero.vue'
   import about from '~organism/about.vue'
+  import testimonials from '~organism/testimonials.vue'
   export default {
     components: {
       hero,
-      about
+      about,
+      testimonials
     }
   }
 </script>
