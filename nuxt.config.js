@@ -65,6 +65,10 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
-  }
+    },
+    vendor: ['vue-carousel']
+  },
+  plugins: [
+    {src: '~/plugins/carousel', ssr: false}
+  ]
 }
