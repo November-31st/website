@@ -3,6 +3,7 @@
     <hero/>
     <about/>
     <testimonials/>
+    <services/>
     <div style="height: 500px;"></div>
   </main>
 </template>
@@ -11,11 +12,13 @@
   import hero from '~organism/hero.vue'
   import about from '~organism/about.vue'
   import testimonials from '~organism/testimonials.vue'
+  import services from '~organism/services.vue'
   export default {
     components: {
       hero,
       about,
-      testimonials
+      testimonials,
+      services
     }
   }
 </script>
