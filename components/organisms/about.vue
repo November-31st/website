@@ -31,5 +31,5 @@
 
 <style scoped>
   @import "../../assets/css/_vars.css";
-  .about{padding-top: calc($gutter * 2.5)}
+  .about{padding-top: calc($gutter * 3)}
 </style>

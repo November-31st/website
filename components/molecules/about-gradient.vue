@@ -15,6 +15,6 @@
     width: 60vw;
     padding-top: 40%;
     transform: skewY(-10deg);
-    background: linear-gradient(40deg, transparent 40%, #F3F0D6 240%);
+    background: linear-gradient(40deg, transparent 40%, $rum_swizzle 240%);
   }
 </style>
