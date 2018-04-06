@@ -24,13 +24,23 @@
           },
           {
             icon: '',
-            title: 'Website Development',
+            title: 'Software Development',
             description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.'
           },
           {
             icon: '',
             title: 'Creative Media Production',
             description: 'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.'
+          },
+          {
+            icon: '',
+            title: 'Distribution logistics',
+            description: 'Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.'
+          },
+          {
+            icon: '',
+            title: 'social branding & digital marketing',
+            description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.'
           }
         ]
       }
