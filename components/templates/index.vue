@@ -3,6 +3,7 @@
     <hero/>
     <about/>
     <testimonials/>
+    <div style="height: 500px;"></div>
   </main>
 </template>
 
