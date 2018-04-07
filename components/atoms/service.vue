@@ -1,6 +1,8 @@
 <template lang="html">
   <div class="service relative white soft-corner align-left">
-    <div class="icon circle-corner tangerine_yellow"></div>
+    <div class="icon circle-corner tangerine_yellow">
+      <img :src="`img/icons/${detail.icon}.svg`" :alt="detail.title" class="responsive">
+    </div>
     <h2 class="nero-text Capitalize">{{detail.title}}</h2>
     <p class="grey-darken-1-text no-margin">{{detail.description}}</p>
   </div>
@@ -24,6 +26,7 @@
     box-shadow: 0 0.3rem 1.4rem 0 color($nero a(10%));
     padding: calc($gutter * 2) calc($gutter * 1.5) calc($gutter * 1.5);
     .icon{
+      padding: calc($gutter * 0.75);
       position: absolute;
       top: calc($gutter * -1.5); left: $gutter;
       size: calc($gutter * 3)}

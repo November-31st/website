@@ -18,27 +18,27 @@
       return {
         services: [
           {
-            icon: '',
+            icon: 'hardware',
             title: 'Hardware & Electronics',
             description: 'Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.'
           },
           {
-            icon: '',
+            icon: 'coding',
             title: 'Software Development',
             description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.'
           },
           {
-            icon: '',
+            icon: 'settings',
             title: 'Creative Media Production',
             description: 'Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.'
           },
           {
-            icon: '',
+            icon: 'delivery-truck',
             title: 'Distribution logistics',
             description: 'Quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip.'
           },
           {
-            icon: '',
+            icon: 'bar-chart',
             title: 'social branding & digital marketing',
             description: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod.'
           }
