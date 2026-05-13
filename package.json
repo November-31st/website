@@ -1,0 +1,24 @@
+{
+  "name": "nov31-website",
+  "version": "2.0.0",
+  "description": "November 31st Website",
+  "author": "Javid Izadfar <Javid.Izadfar@gmail.com>",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "autoprefixer": "^10.4.20",
+    "nuxt": "^3.13.2",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "vue": "^3.5.12",
+    "vue-router": "^4.4.5"
+  }
+}
