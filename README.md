@@ -10,7 +10,7 @@ Built with **Nuxt**, **Tailwind CSS** and the brand color `#ffc80b`.
 
 - [Nuxt](https://nuxt.com) (Vue, Vite)
 - [Tailwind CSS v4](https://tailwindcss.com/) with [`@tailwindcss/vite`](https://tailwindcss.com/docs/installation/framework-guides/nuxt)
-- [Vazirmatn](https://github.com/rastikerdar/vazirmatn) via [`@fontsource/vazirmatn`](https://fontsource.org/fonts/vazirmatn) (self-hosted)
+- [Vazirmatn](https://github.com/rastikerdar/vazirmatn) via [`@nuxt/fonts`](https://fonts.nuxt.com/) (`npm` provider → [`@fontsource/vazirmatn`](https://www.npmjs.com/package/@fontsource/vazirmatn))
 - Full RTL (`lang="fa"`, `dir="rtl"`)
 
 ## Setup

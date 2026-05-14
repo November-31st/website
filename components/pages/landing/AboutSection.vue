@@ -8,23 +8,25 @@ import { toFarsiIndex } from "@/utils/farsi";
     <div class="container-page">
       <div class="grid items-start gap-16 lg:grid-cols-2">
         <div>
-          <span class="eyebrow">درباره‌ی ما (تا حدی)</span>
-          <h2 class="section-title mt-5 text-balance">
+          <UiEyebrow>درباره‌ی ما (تا حدی)</UiEyebrow>
+          <UiTitle class="mt-5">
             ما یک
             <span class="text-brand">بنیاد</span>یم،
             <br />
             ولی نه از آن‌هایی که قبضشان به جایی می‌خورد.
-          </h2>
+          </UiTitle>
           <p class="mt-6 max-w-xl text-lg leading-9 text-ink-300">
             بنیاد ۳۱ نوامبر، پناهگاه ایده‌هایی است که هیچ سرمایه‌گذار عاقلی حاضر
             نشد رویشان شرط ببندد. ما شرط بستیم. فعلاً نباخته‌ایم.
           </p>
 
           <div class="mt-10 space-y-5">
-            <div
+            <UiCard
               v-for="(p, i) in aboutPoints"
               :key="p.title"
-              class="flex gap-5 rounded-2xl border border-white/5 bg-white/[0.02] p-5 transition hover:border-brand/30"
+              variant="ghost"
+              tag="div"
+              class="flex gap-5"
             >
               <div
                 class="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-brand/15 text-brand"
@@ -37,7 +39,7 @@ import { toFarsiIndex } from "@/utils/farsi";
                 <h3 class="text-base font-bold text-white">{{ p.title }}</h3>
                 <p class="mt-1 text-sm leading-7 text-ink-300">{{ p.body }}</p>
               </div>
-            </div>
+            </UiCard>
           </div>
         </div>
 

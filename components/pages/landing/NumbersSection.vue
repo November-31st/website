@@ -8,11 +8,11 @@ import { toFarsiIndex } from "@/utils/farsi";
     <div class="container-page">
       <div class="grid items-end gap-10 lg:grid-cols-[1fr_1.2fr]">
         <div>
-          <span class="eyebrow">عدد و رقم (بدون فتوشاپ)</span>
-          <h2 class="section-title mt-5 text-balance">
+          <UiEyebrow>عدد و رقم (بدون فتوشاپ)</UiEyebrow>
+          <UiTitle class="mt-5">
             اعدادی که اگر
             <span class="text-brand">دروغ بود</span>، یک چیز قشنگ‌تری می‌گفتیم.
-          </h2>
+          </UiTitle>
           <p class="mt-5 max-w-md text-lg text-ink-300">
             مدیر فروشمان گفت یک سکشن «اعداد» داشته باشید، آدم اعتماد می‌کند. خب،
             بفرمایید.
@@ -20,10 +20,12 @@ import { toFarsiIndex } from "@/utils/farsi";
         </div>
 
         <div class="grid grid-cols-2 gap-3">
-          <div
+          <UiCard
             v-for="(n, i) in numbers"
             :key="n.label"
-            class="group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.05] to-transparent p-7 transition hover:border-brand/40"
+            variant="stat"
+            tag="div"
+            class="group"
           >
             <div
               aria-hidden="true"
@@ -39,7 +41,7 @@ import { toFarsiIndex } from "@/utils/farsi";
             </p>
             <p class="mt-3 text-sm font-medium text-brand">{{ n.label }}</p>
             <p class="mt-1 text-xs text-ink-400">{{ n.note }}</p>
-          </div>
+          </UiCard>
         </div>
       </div>
     </div>

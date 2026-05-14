@@ -5,6 +5,21 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
   srcDir: ".",
+  modules: ["@nuxt/fonts", "@nuxt/icon"],
+  fonts: {
+    provider: "npm",
+    defaults: {
+      weights: [300, 400, 500, 600, 700, 800, 900],
+      styles: ["normal"],
+    },
+    families: [
+      {
+        name: "Vazirmatn",
+        provider: "npm",
+        global: true,
+      },
+    ],
+  },
   components: {
     dirs: [
       {

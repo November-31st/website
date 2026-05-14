@@ -15,17 +15,8 @@ const year = new Date().getFullYear();
       <div class="grid gap-14 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <div class="flex items-center gap-4">
-            <img
-              src="/logo.png"
-              alt="بنیاد ۳۱ نوامبر"
-              width="582"
-              height="293"
-              class="h-12 w-auto"
-            />
-            <div class="flex flex-col leading-tight">
-              <span class="text-base font-bold text-white">۳۱ نوامبر</span>
-              <span class="text-xs text-ink-300"> بنیاد نه چندان خیریه </span>
-            </div>
+            <SiteLogo variant="footer" />
+            <SiteWordmark variant="footer" />
           </div>
           <p class="mt-6 max-w-md text-sm leading-7 text-ink-300">
             ما در روزی هستیم که هیچ تقویمی نمی‌شناسد، و چیزهایی می‌سازیم که

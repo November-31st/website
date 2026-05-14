@@ -13,11 +13,11 @@ import { toFarsiIndex } from "@/utils/farsi";
 
     <div class="container-page">
       <div class="mx-auto max-w-3xl text-center">
-        <span class="eyebrow">کارنامه‌ی شیطنت</span>
-        <h2 class="section-title mt-5 text-balance">
+        <UiEyebrow>کارنامه‌ی شیطنت</UiEyebrow>
+        <UiTitle class="mt-5">
           سه دسته،
           <span class="text-brand">بقیه‌اش زیر فرش</span>
-        </h2>
+        </UiTitle>
         <p class="mt-5 text-lg text-ink-300">
           نگفتیم فقط سه‌تاست. ولی برای اینکه شما گیج نشوید (و ما عاقل به‌نظر
           بیاییم)، تظاهر می‌کنیم که الان سه دسته داریم.
@@ -25,10 +25,11 @@ import { toFarsiIndex } from "@/utils/farsi";
       </div>
 
       <div class="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <article
+        <UiCard
           v-for="(s, i) in services"
           :key="s.title"
-          class="card group flex flex-col"
+          tag="article"
+          class="group flex flex-col"
           :class="s.featured ? 'lg:row-span-1 lg:col-span-1' : ''"
         >
           <div
@@ -44,57 +45,17 @@ import { toFarsiIndex } from "@/utils/farsi";
             <div
               class="grid h-12 w-12 place-items-center rounded-xl bg-brand/10 text-brand ring-1 ring-inset ring-brand/30"
             >
-              <svg
+              <Icon
                 v-if="s.icon === 'apps'"
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="3" y="3" width="7" height="7" rx="1.5" />
-                <rect x="14" y="3" width="7" height="7" rx="1.5" />
-                <rect x="3" y="14" width="7" height="7" rx="1.5" />
-                <rect x="14" y="14" width="7" height="7" rx="1.5" />
-              </svg>
-              <svg
+                name="lucide:layout-grid"
+                class="size-[22px]"
+              />
+              <Icon
                 v-else-if="s.icon === 'hardware'"
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <rect x="4" y="4" width="16" height="16" rx="2" />
-                <rect x="9" y="9" width="6" height="6" />
-                <path
-                  d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"
-                />
-              </svg>
-              <svg
-                v-else
-                xmlns="http://www.w3.org/2000/svg"
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path
-                  d="M12 3l1.9 4.6L18.5 9l-3.7 3 1.2 4.9L12 14.8 8 17l1.2-5L5.5 9l4.6-1.4L12 3z"
-                />
-              </svg>
+                name="lucide:cpu"
+                class="size-[22px]"
+              />
+              <Icon v-else name="lucide:sparkles" class="size-[22px]" />
             </div>
             <span
               class="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] text-ink-300"
@@ -119,19 +80,7 @@ import { toFarsiIndex } from "@/utils/farsi";
               <span
                 class="grid h-5 w-5 place-items-center rounded-full bg-brand/15 text-brand"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="12"
-                  height="12"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
+                <Icon name="lucide:check" class="size-3 stroke-[3]" />
               </span>
               {{ h }}
             </li>
@@ -149,24 +98,13 @@ import { toFarsiIndex } from "@/utils/farsi";
               class="inline-flex items-center gap-2 text-sm font-medium text-brand transition-colors hover:text-white"
             >
               بیشتر بپرس
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="rotate-180"
-              >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
+              <Icon
+                name="lucide:chevron-right"
+                class="size-3.5 shrink-0 rotate-180"
+              />
             </NuxtLink>
           </div>
-        </article>
+        </UiCard>
       </div>
     </div>
   </section>

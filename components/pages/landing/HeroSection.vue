@@ -9,32 +9,24 @@ import { heroBadges, heroStats } from "@/constants/landing";
     <div class="container-page">
       <div class="mx-auto max-w-7xl text-center">
         <div class="flex justify-center animate-fade-up">
-          <img
-            src="/logo.png"
-            alt="بنیاد ۳۱ نوامبر"
-            width="582"
-            height="293"
-            class="h-24 w-auto drop-shadow-[0_0_40px_rgba(255,200,11,0.35)] sm:h-28"
-          />
+          <SiteLogo variant="hero" />
         </div>
         <div
           class="mt-6 flex justify-center animate-fade-up"
           style="animation-delay: 40ms"
         >
-          <span class="eyebrow">
-            <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-brand" />
-            بنیاد نه چندان خیریه‌ی ۳۱ نوامبر
-          </span>
+          <UiEyebrow pulse> بنیاد نه چندان خیریه‌ی ۳۱ نوامبر </UiEyebrow>
         </div>
 
-        <h1
-          class="mt-7 text-balance text-5xl font-black leading-[1.1] tracking-tight text-white animate-fade-up sm:text-6xl md:text-7xl lg:text-[88px]"
+        <UiTitle
+          variant="hero"
+          class="mt-7 animate-fade-up"
           style="animation-delay: 80ms"
         >
           چیزهایی می‌سازیم که
           <span class="text-gradient">روز‌ ۳۱ نوامبر</span>
           متولد می‌شوند.
-        </h1>
+        </UiTitle>
 
         <p
           class="mx-auto mt-8 max-w-2xl text-balance text-lg leading-9 text-ink-300 animate-fade-up sm:text-xl"
@@ -48,35 +40,16 @@ import { heroBadges, heroStats } from "@/constants/landing";
           class="mt-10 flex flex-col items-center justify-center gap-3 animate-fade-up sm:flex-row"
           style="animation-delay: 240ms"
         >
-          <NuxtLink
-            to="/#services"
-            class="btn-primary"
-            title="رفتن به بخش خدمات"
-          >
+          <UiButton to="/#services" title="رفتن به بخش خدمات">
             ببین چه دسته‌گلی به آب داده‌ایم
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2.5"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="rtl:rotate-180"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </NuxtLink>
-          <NuxtLink
-            to="/#about"
-            class="btn-ghost"
-            title="رفتن به بخش دربارهٔ ما"
-          >
+            <Icon
+              name="lucide:chevron-right"
+              class="size-4 shrink-0 rtl:rotate-180"
+            />
+          </UiButton>
+          <UiButton to="/#about" variant="ghost" title="رفتن به بخش دربارهٔ ما">
             داستان جنایت
-          </NuxtLink>
+          </UiButton>
         </div>
       </div>
 

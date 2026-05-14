@@ -34,17 +34,8 @@ onBeforeUnmount(() => {
         class="flex items-center gap-3"
         title="۳۱ نوامبر — بنیاد نه چندان خیریه، صفحهٔ اصلی"
       >
-        <img
-          src="/logo.png"
-          alt="بنیاد ۳۱ نوامبر"
-          width="582"
-          height="293"
-          class="h-9 w-auto sm:h-10"
-        />
-        <span class="hidden flex-col leading-tight sm:flex">
-          <span class="text-sm font-bold text-white">۳۱ نوامبر</span>
-          <span class="text-[11px] text-ink-300">بنیاد نه چندان خیریه</span>
-        </span>
+        <SiteLogo variant="nav" />
+        <SiteWordmark variant="nav" />
       </NuxtLink>
 
       <nav class="hidden items-center gap-1 md:flex">
@@ -60,13 +51,13 @@ onBeforeUnmount(() => {
       </nav>
 
       <div class="hidden items-center gap-3 md:flex">
-        <NuxtLink
+        <UiButton
           to="/#contact"
-          class="btn-primary !py-2.5 !px-5 !text-sm"
+          class="py-2.5! px-5! text-sm!"
           title="رفتن به بخش تماس"
         >
           بزن بریم
-        </NuxtLink>
+        </UiButton>
       </div>
 
       <button
@@ -75,37 +66,8 @@ onBeforeUnmount(() => {
         aria-label="باز کردن منو"
         @click="isOpen = !isOpen"
       >
-        <svg
-          v-if="!isOpen"
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="4" y1="6" x2="20" y2="6" />
-          <line x1="4" y1="12" x2="20" y2="12" />
-          <line x1="4" y1="18" x2="20" y2="18" />
-        </svg>
-        <svg
-          v-else
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="6" y1="6" x2="18" y2="18" />
-          <line x1="6" y1="18" x2="18" y2="6" />
-        </svg>
+        <Icon v-if="!isOpen" name="lucide:menu" class="size-5" />
+        <Icon v-else name="lucide:x" class="size-5" />
       </button>
     </div>
 
@@ -132,14 +94,14 @@ onBeforeUnmount(() => {
           >
             {{ link.label }}
           </NuxtLink>
-          <NuxtLink
+          <UiButton
             to="/#contact"
-            class="btn-primary mt-2"
+            class="mt-2"
             title="رفتن به بخش تماس"
             @click="isOpen = false"
           >
             بزن بریم
-          </NuxtLink>
+          </UiButton>
         </div>
       </div>
     </Transition>

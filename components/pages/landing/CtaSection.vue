@@ -24,14 +24,12 @@ import { contactLinks } from "@/constants/landing";
 
         <div class="relative grid items-center gap-10 lg:grid-cols-[1.4fr_1fr]">
           <div>
-            <span class="eyebrow">نوبت توست (آره با تو، نه بغلی‌ات)</span>
-            <h2
-              class="mt-5 text-balance text-3xl font-black leading-tight text-white sm:text-5xl"
-            >
+            <UiEyebrow>نوبت توست (آره با تو، نه بغلی‌ات)</UiEyebrow>
+            <UiTitle variant="promo" class="mt-5">
               یک ایده داری که
               <span class="text-brand">عاقل‌ها</span>
               به آن خندیدند؟
-            </h2>
+            </UiTitle>
             <p
               class="mt-5 max-w-xl text-base leading-8 text-ink-200 sm:text-lg"
             >
@@ -40,37 +38,21 @@ import { contactLinks } from "@/constants/landing";
             </p>
 
             <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <NuxtLink
+              <UiButton
                 to="mailto:hi@nov31st.online"
                 external
-                class="btn-primary"
                 title="ارسال ایمیل به hi@nov31st.online"
               >
                 hi@nov31st.online
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path
-                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-                  />
-                  <polyline points="22,6 12,13 2,6" />
-                </svg>
-              </NuxtLink>
-              <NuxtLink
+                <Icon name="lucide:mail" class="size-4 shrink-0 stroke-[2.5]" />
+              </UiButton>
+              <UiButton
                 to="/#services"
-                class="btn-ghost"
+                variant="ghost"
                 title="رفتن به بخش خدمات"
               >
                 ببین قبلاً چه گندی زدیم
-              </NuxtLink>
+              </UiButton>
             </div>
           </div>
 
@@ -100,20 +82,10 @@ import { contactLinks } from "@/constants/landing";
                     :title="c.label"
                     aria-label="باز کن"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <path d="M7 17L17 7" />
-                      <path d="M7 7h10v10" />
-                    </svg>
+                    <Icon
+                      name="lucide:arrow-up-right"
+                      class="size-3.5 stroke-[2.5]"
+                    />
                   </NuxtLink>
                 </div>
               </div>
