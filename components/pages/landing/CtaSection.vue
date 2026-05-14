@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { contactLinks } from "../constants/landing";
+import { contactLinks } from "@/constants/landing";
 </script>
 
 <template>
@@ -40,7 +40,12 @@ import { contactLinks } from "../constants/landing";
             </p>
 
             <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <a href="mailto:hi@nov31st.online" class="btn-primary">
+              <NuxtLink
+                to="mailto:hi@nov31st.online"
+                external
+                class="btn-primary"
+                title="ارسال ایمیل به hi@nov31st.online"
+              >
                 hi@nov31st.online
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -58,8 +63,14 @@ import { contactLinks } from "../constants/landing";
                   />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
-              </a>
-              <a href="#services" class="btn-ghost">ببین قبلاً چه گندی زدیم</a>
+              </NuxtLink>
+              <NuxtLink
+                to="/#services"
+                class="btn-ghost"
+                title="رفتن به بخش خدمات"
+              >
+                ببین قبلاً چه گندی زدیم
+              </NuxtLink>
             </div>
           </div>
 
@@ -82,9 +93,11 @@ import { contactLinks } from "../constants/landing";
                       {{ c.value }}
                     </p>
                   </div>
-                  <a
-                    :href="c.href"
+                  <NuxtLink
+                    :to="c.href"
+                    external
                     class="grid h-9 w-9 place-items-center rounded-lg bg-brand/15 text-brand transition hover:bg-brand hover:text-ink-950"
+                    :title="c.label"
                     aria-label="باز کن"
                   >
                     <svg
@@ -101,7 +114,7 @@ import { contactLinks } from "../constants/landing";
                       <path d="M7 17L17 7" />
                       <path d="M7 7h10v10" />
                     </svg>
-                  </a>
+                  </NuxtLink>
                 </div>
               </div>
             </div>

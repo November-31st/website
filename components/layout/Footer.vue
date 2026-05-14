@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { footerGroups } from "../constants/landing";
+import { footerGroups } from "@/constants/landing";
 
 const year = new Date().getFullYear();
 </script>
@@ -8,7 +8,7 @@ const year = new Date().getFullYear();
   <footer class="relative mt-32 border-t border-white/5 bg-ink-950">
     <div
       aria-hidden="true"
-      class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-brand/60 to-transparent"
+      class="pointer-events-none absolute inset-x-0 top-0 h-px bg-linear-to-l from-transparent via-brand/60 to-transparent"
     />
 
     <div class="container-page py-20">
@@ -38,12 +38,13 @@ const year = new Date().getFullYear();
           <h4 class="text-sm font-bold text-white">{{ group.title }}</h4>
           <ul class="mt-5 space-y-3">
             <li v-for="item in group.items" :key="item.label">
-              <a
-                :href="item.href"
+              <NuxtLink
+                :to="item.href"
+                :title="item.label"
                 class="text-sm text-ink-300 transition-colors hover:text-brand"
               >
                 {{ item.label }}
-              </a>
+              </NuxtLink>
             </li>
           </ul>
         </div>
@@ -55,17 +56,19 @@ const year = new Date().getFullYear();
         <p>
           © {{ year }} بنیاد ۳۱ نوامبر — هیچ حقی محفوظ نیست، چون اصلاً قانونی
           نداریم.
-          <a
-            href="https://nov31st.online"
+          <NuxtLink
+            to="https://nov31st.online"
+            external
+            title="وب‌سایت nov31st.online"
             class="text-ink-300 transition-colors hover:text-brand"
           >
             nov31st.online
-          </a>
+          </NuxtLink>
         </p>
         <p class="text-ink-500">
           ساخته شده با
-          <span class="text-brand">♥</span>،
-          چند فنجان قهوه و توهینی به چند هوش مصنوعی.
+          <span class="text-brand">♥</span>، چند فنجان قهوه و توهینی به چند هوش
+          مصنوعی.
         </p>
       </div>
     </div>

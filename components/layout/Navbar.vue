@@ -3,10 +3,10 @@ const isOpen = ref(false);
 const scrolled = ref(false);
 
 const links = [
-  { href: "#about", label: "درباره ما" },
-  { href: "#services", label: "خدمات" },
-  { href: "#numbers", label: "اعداد" },
-  { href: "#contact", label: "تماس" },
+  { to: "/#about", label: "درباره ما" },
+  { to: "/#services", label: "خدمات" },
+  { to: "/#numbers", label: "اعداد" },
+  { to: "/#contact", label: "تماس" },
 ];
 
 const onScroll = () => {
@@ -29,7 +29,11 @@ onBeforeUnmount(() => {
     :class="scrolled ? 'backdrop-blur-xl bg-ink-950/70' : 'bg-transparent'"
   >
     <div class="container-page flex h-16 items-center justify-between sm:h-20">
-      <a href="#" class="flex items-center gap-3">
+      <NuxtLink
+        to="/"
+        class="flex items-center gap-3"
+        title="۳۱ نوامبر — بنیاد نه چندان خیریه، صفحهٔ اصلی"
+      >
         <img
           src="/logo.png"
           alt="بنیاد ۳۱ نوامبر"
@@ -41,23 +45,28 @@ onBeforeUnmount(() => {
           <span class="text-sm font-bold text-white">۳۱ نوامبر</span>
           <span class="text-[11px] text-ink-300">بنیاد نه چندان خیریه</span>
         </span>
-      </a>
+      </NuxtLink>
 
       <nav class="hidden items-center gap-1 md:flex">
-        <a
+        <NuxtLink
           v-for="link in links"
-          :key="link.href"
-          :href="link.href"
+          :key="link.to"
+          :to="link.to"
+          :title="link.label"
           class="rounded-full px-4 py-2 text-sm text-ink-200 transition-colors hover:bg-white/5 hover:text-white"
         >
           {{ link.label }}
-        </a>
+        </NuxtLink>
       </nav>
 
       <div class="hidden items-center gap-3 md:flex">
-        <a href="#contact" class="btn-primary !py-2.5 !px-5 !text-sm">
+        <NuxtLink
+          to="/#contact"
+          class="btn-primary !py-2.5 !px-5 !text-sm"
+          title="رفتن به بخش تماس"
+        >
           بزن بریم
-        </a>
+        </NuxtLink>
       </div>
 
       <button
@@ -113,18 +122,24 @@ onBeforeUnmount(() => {
         class="border-t border-white/5 bg-ink-950/95 backdrop-blur-xl md:hidden"
       >
         <div class="container-page flex flex-col gap-1 py-4">
-          <a
+          <NuxtLink
             v-for="link in links"
-            :key="link.href"
-            :href="link.href"
+            :key="link.to"
+            :to="link.to"
+            :title="link.label"
             class="rounded-lg px-4 py-3 text-sm text-ink-200 hover:bg-white/5 hover:text-white"
             @click="isOpen = false"
           >
             {{ link.label }}
-          </a>
-          <a href="#contact" class="btn-primary mt-2" @click="isOpen = false">
+          </NuxtLink>
+          <NuxtLink
+            to="/#contact"
+            class="btn-primary mt-2"
+            title="رفتن به بخش تماس"
+            @click="isOpen = false"
+          >
             بزن بریم
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </Transition>

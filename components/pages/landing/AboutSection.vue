@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { aboutPoints, aboutStats } from "../constants/landing";
-import { toFarsiIndex } from "../utils/farsi";
+import { aboutPoints, aboutStats } from "@/constants/landing";
+import { toFarsiIndex } from "@/utils/farsi";
 </script>
 
 <template>
@@ -16,8 +16,8 @@ import { toFarsiIndex } from "../utils/farsi";
             ولی نه از آن‌هایی که قبضشان به جایی می‌خورد.
           </h2>
           <p class="mt-6 max-w-xl text-lg leading-9 text-ink-300">
-            بنیاد ۳۱ نوامبر، پناهگاه ایده‌هایی است که هیچ سرمایه‌گذار عاقلی
-            حاضر نشد رویشان شرط ببندد. ما شرط بستیم. فعلاً نباخته‌ایم.
+            بنیاد ۳۱ نوامبر، پناهگاه ایده‌هایی است که هیچ سرمایه‌گذار عاقلی حاضر
+            نشد رویشان شرط ببندد. ما شرط بستیم. فعلاً نباخته‌ایم.
           </p>
 
           <div class="mt-10 space-y-5">

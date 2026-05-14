@@ -130,25 +130,25 @@ export const footerGroups = [
   {
     title: "بنیاد",
     items: [
-      { label: "درباره ما", href: "#about" },
-      { label: "خدمات", href: "#services" },
-      { label: "تماس", href: "#contact" },
+      { label: "درباره ما", href: "/#about" },
+      { label: "خدمات", href: "/#services" },
+      { label: "تماس", href: "/#contact" },
     ],
   },
   {
     title: "محصولات",
     items: [
-      { label: "اپلیکیشن‌ها", href: "#services" },
-      { label: "سخت‌افزار", href: "#services" },
-      { label: "پروژه‌های آزمایشی", href: "#services" },
+      { label: "اپلیکیشن‌ها", href: "/#services" },
+      { label: "سخت‌افزار", href: "/#services" },
+      { label: "پروژه‌های آزمایشی", href: "/#services" },
     ],
   },
   {
     title: "منابع",
     items: [
-      { label: "وبلاگ (شاید روزی)", href: "#" },
-      { label: "مستندات (همان شاید)", href: "#" },
-      { label: "بزن بریم", href: "#contact" },
+      { label: "وبلاگ (شاید روزی)", href: "/" },
+      { label: "مستندات (همان شاید)", href: "/" },
+      { label: "بزن بریم", href: "/#contact" },
     ],
   },
 ] as const;

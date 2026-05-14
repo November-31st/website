@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { services } from "../constants/landing";
-import { toFarsiIndex } from "../utils/farsi";
+import { services } from "@/constants/landing";
+import { toFarsiIndex } from "@/utils/farsi";
 </script>
 
 <template>
@@ -143,8 +143,9 @@ import { toFarsiIndex } from "../utils/farsi";
             <span class="text-[11px] text-ink-400">
               {{ toFarsiIndex(i + 1) }} / {{ toFarsiIndex(services.length) }}
             </span>
-            <a
-              href="#contact"
+            <NuxtLink
+              to="/#contact"
+              title="رفتن به بخش تماس"
               class="inline-flex items-center gap-2 text-sm font-medium text-brand transition-colors hover:text-white"
             >
               بیشتر بپرس
@@ -163,7 +164,7 @@ import { toFarsiIndex } from "../utils/farsi";
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-            </a>
+            </NuxtLink>
           </div>
         </article>
       </div>

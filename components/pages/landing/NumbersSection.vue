@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { numbers } from "../constants/landing";
-import { toFarsiIndex } from "../utils/farsi";
+import { numbers } from "@/constants/landing";
+import { toFarsiIndex } from "@/utils/farsi";
 </script>
 
 <template>

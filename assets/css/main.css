@@ -1,6 +1,105 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@source "../../components/**/*.vue";
+@source "../../layouts/**/*.vue";
+@source "../../pages/**/*.vue";
+@source "../../app.vue";
+@source "../../nuxt.config.ts";
+
+@theme {
+  --color-brand-50: #fff9e0;
+  --color-brand-100: #fff0b8;
+  --color-brand-200: #ffe585;
+  --color-brand-300: #ffd852;
+  --color-brand-400: #ffce26;
+  --color-brand: #ffc80b;
+  --color-brand-500: #ffc80b;
+  --color-brand-600: #e6b300;
+  --color-brand-700: #b38a00;
+  --color-brand-800: #806300;
+  --color-brand-900: #4d3b00;
+
+  --color-ink-50: #f6f6f7;
+  --color-ink-100: #e6e6e8;
+  --color-ink-200: #c9c9cd;
+  --color-ink-300: #9c9ca5;
+  --color-ink-400: #6b6b76;
+  --color-ink-500: #4a4a55;
+  --color-ink-600: #2f2f38;
+  --color-ink-700: #1e1e25;
+  --color-ink-800: #141418;
+  --color-ink-900: #0a0a0d;
+  --color-ink-950: #050507;
+
+  --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-glow: 0 0 60px -10px rgba(255, 200, 11, 0.45);
+  --shadow-glow-sm: 0 0 24px -6px rgba(255, 200, 11, 0.35);
+
+  --background-image-grid-fade: linear-gradient(
+    180deg,
+    rgba(5, 5, 7, 0) 0%,
+    rgba(5, 5, 7, 1) 90%
+  );
+  --background-image-radial-brand: radial-gradient(
+    ellipse at top,
+    rgba(255, 200, 11, 0.18),
+    transparent 60%
+  );
+
+  --animate-fade-up: fade-up 0.8s ease-out both;
+  --animate-marquee: marquee 30s linear infinite;
+  --animate-marquee-rtl: marquee-rtl 30s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@import "@fontsource/vazirmatn/300.css";
+@import "@fontsource/vazirmatn/400.css";
+@import "@fontsource/vazirmatn/500.css";
+@import "@fontsource/vazirmatn/600.css";
+@import "@fontsource/vazirmatn/700.css";
+@import "@fontsource/vazirmatn/800.css";
+@import "@fontsource/vazirmatn/900.css";
 
 @layer base {
   :root {
@@ -59,7 +158,7 @@
   }
 
   .card {
-    @apply relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.02] p-8 backdrop-blur transition-all duration-500 hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow-sm;
+    @apply relative overflow-hidden rounded-3xl border border-white/10 bg-linear-to-b from-white/6 to-white/2 p-8 backdrop-blur transition-all duration-500 hover:-translate-y-1 hover:border-brand/40 hover:shadow-glow-sm;
   }
 
   .grid-bg {

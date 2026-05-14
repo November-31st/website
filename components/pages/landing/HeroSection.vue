@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { heroBadges, heroStats } from "../constants/landing";
+import { heroBadges, heroStats } from "@/constants/landing";
 </script>
 
 <template>
@@ -48,7 +48,11 @@ import { heroBadges, heroStats } from "../constants/landing";
           class="mt-10 flex flex-col items-center justify-center gap-3 animate-fade-up sm:flex-row"
           style="animation-delay: 240ms"
         >
-          <a href="#services" class="btn-primary">
+          <NuxtLink
+            to="/#services"
+            class="btn-primary"
+            title="رفتن به بخش خدمات"
+          >
             ببین چه دسته‌گلی به آب داده‌ایم
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -65,8 +69,14 @@ import { heroBadges, heroStats } from "../constants/landing";
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
-          </a>
-          <a href="#about" class="btn-ghost">داستان جنایت</a>
+          </NuxtLink>
+          <NuxtLink
+            to="/#about"
+            class="btn-ghost"
+            title="رفتن به بخش دربارهٔ ما"
+          >
+            داستان جنایت
+          </NuxtLink>
         </div>
       </div>
 

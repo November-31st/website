@@ -4,25 +4,27 @@ A sleek, modern Farsi (RTL) landing page for the **November 31st not-so-charitab
 
 **Domain:** [nov31st.online](https://nov31st.online)
 
-Built with **Nuxt 3**, **Tailwind CSS** and the brand color `#ffc80b`.
+Built with **Nuxt**, **Tailwind CSS** and the brand color `#ffc80b`.
 
 ## Stack
 
-- [Nuxt 3](https://nuxt.com) (Vue 3, Vite)
-- [@nuxtjs/tailwindcss](https://tailwindcss.nuxtjs.org/)
-- [Vazirmatn](https://github.com/rastikerdar/vazirmatn) Persian web font (loaded from Google Fonts)
+- [Nuxt](https://nuxt.com) (Vue, Vite)
+- [Tailwind CSS v4](https://tailwindcss.com/) with [`@tailwindcss/vite`](https://tailwindcss.com/docs/installation/framework-guides/nuxt)
+- [Vazirmatn](https://github.com/rastikerdar/vazirmatn) via [`@fontsource/vazirmatn`](https://fontsource.org/fonts/vazirmatn) (self-hosted)
 - Full RTL (`lang="fa"`, `dir="rtl"`)
 
 ## Setup
 
+[Install pnpm](https://pnpm.io/installation) if needed, then:
+
 ```bash
-npm install
+pnpm install
 ```
 
 ## Development
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Visit http://localhost:3000
@@ -30,14 +32,14 @@ Visit http://localhost:3000
 ## Production
 
 ```bash
-npm run build
-npm run preview
+pnpm build
+pnpm preview
 ```
 
 ## Static export
 
 ```bash
-npm run generate
+pnpm generate
 ```
 
 ## Project layout
@@ -45,9 +47,8 @@ npm run generate
 ```
 .
 ├── app.vue                 # Root layout (navbar + page + footer)
-├── nuxt.config.ts          # Nuxt + meta + font + RTL config
-├── tailwind.config.js      # Brand palette, fonts, animations
-├── assets/css/main.css     # Tailwind + design tokens + components
+├── nuxt.config.ts          # Nuxt + meta + RTL config
+├── assets/css/main.css     # Tailwind (@theme), fonts, components
 ├── components/
 │   ├── SiteNavbar.vue
 │   ├── SiteFooter.vue
