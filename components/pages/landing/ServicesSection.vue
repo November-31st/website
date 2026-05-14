@@ -80,7 +80,7 @@ import { toFarsiIndex } from "@/utils/farsi";
               <span
                 class="grid h-5 w-5 place-items-center rounded-full bg-brand/15 text-brand"
               >
-                <Icon name="lucide:check" class="size-3 stroke-[3]" />
+                <Icon name="lucide:check" class="size-3 stroke-3" />
               </span>
               {{ h }}
             </li>
