@@ -1,5 +1,11 @@
 <script setup lang="ts">
-import { irajmirzaGameUrl } from "@/constants/irajmirza";
+import {
+  irajmirzaGamePlayUrl,
+  irajmirzaGooglePlayUrl,
+} from "@/constants/irajmirza";
+
+const { isAndroidPlayCapable, playStoreDisabledBanter } =
+  useIrajmirzaGooglePlayCta();
 
 const quickFacts = [
   {
@@ -8,9 +14,10 @@ const quickFacts = [
     value: "نسخهٔ وب؛ اگر وسط بازی عاشق شدی، بعداً نصبش کن.",
   },
   {
-    icon: "lucide:package-open",
-    label: "فروشگاه؟ فعلاً نه",
-    value: "اگر روزی رفت استور، همان‌جا جشن می‌گیریم؛ تا آن وقت لینک همین است.",
+    icon: "lucide:smartphone",
+    label: "اندروید؟ پلی‌استور",
+    value:
+      "روی اندروید از گوگل پلی نصب می‌شود؛ روی آیفون و دسکتاپ فعلاً فقط وب، اپ‌استور اگر بیاید بعداً خبرش را می‌دهیم.",
   },
   {
     icon: "lucide:shield-alert",
@@ -56,20 +63,59 @@ const quickFacts = [
             <p
               class="mx-auto mt-5 max-w-xl text-base leading-8 text-ink-200 sm:text-lg lg:mx-0"
             >
-              همین‌جا لینک بازی است؛ بدون اپ‌استور، بدون فیلم سینمایی، بدون قول
-              «فردا جهان عوض می‌شود». فقط یک تب جدید که شاید ببندی قبل از این‌که
-              بفهمی چرا.
+              همین‌جا مسیر بازی است؛ اندروید را از پلی بگیر، بقیه وب؛ بدون فیلم
+              سینمایی، بدون قول «فردا جهان عوض می‌شود». فقط یک تب جدید که شاید
+              ببندی قبل از این‌که بفهمی چرا.
             </p>
 
             <div
-              class="mt-8 flex flex-col flex-wrap items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start"
+              class="mt-8 flex flex-col flex-wrap items-stretch justify-center gap-3 sm:flex-row sm:items-start lg:justify-start"
             >
+              <div class="flex min-w-0 flex-1 flex-col gap-2 sm:max-w-sm">
+                <UiButton
+                  :to="irajmirzaGooglePlayUrl"
+                  :disabled="!isAndroidPlayCapable"
+                  v-bind="
+                    isAndroidPlayCapable
+                      ? {
+                          external: true,
+                          target: '_blank',
+                          rel: 'noopener noreferrer',
+                        }
+                      : {}
+                  "
+                  :title="
+                    isAndroidPlayCapable
+                      ? 'دانلود از گوگل پلی'
+                      : 'گوگل پلی فقط روی اندروید'
+                  "
+                >
+                  دانلود از گوگل پلی
+                  <Icon
+                    v-if="isAndroidPlayCapable"
+                    name="lucide:external-link"
+                    class="size-4 shrink-0 stroke-[2.5]"
+                  />
+                  <Icon
+                    v-else
+                    name="lucide:ban"
+                    class="size-4 shrink-0 stroke-[2.5]"
+                    aria-hidden="true"
+                  />
+                </UiButton>
+                <p
+                  v-if="!isAndroidPlayCapable"
+                  class="text-right text-xs leading-relaxed text-ink-400 sm:text-sm"
+                >
+                  {{ playStoreDisabledBanter }}
+                </p>
+              </div>
               <UiButton
-                :to="irajmirzaGameUrl"
+                :to="irajmirzaGamePlayUrl('download')"
                 external
                 target="_blank"
                 rel="noopener noreferrer"
-                title="ورود به بازی ایرج‌میرزا"
+                title="ورود به بازی ایرج‌میرزا (وب)"
               >
                 ورود به بازی
                 <Icon

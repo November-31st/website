@@ -31,11 +31,14 @@ const passthrough = computed(() => {
   const { class: _c, ...rest } = attrs as Record<string, unknown>;
   return rest;
 });
+
+/** لینک فقط وقتی فعال است که `disabled` نباشد؛ وگرنه `<button disabled>`. */
+const isLink = computed(() => Boolean(props.to) && !props.disabled);
 </script>
 
 <template>
   <NuxtLink
-    v-if="to"
+    v-if="isLink"
     :to="to"
     :external="external"
     :title="title"
@@ -47,7 +50,7 @@ const passthrough = computed(() => {
   <button
     v-else
     :type="type"
-    :disabled="disabled"
+    :disabled="Boolean(disabled)"
     :title="title"
     :class="mergedClass"
     v-bind="passthrough"
@@ -60,10 +63,10 @@ const passthrough = computed(() => {
 @reference "../assets/css/main.css";
 
 .btn-primary {
-  @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-bold text-ink-950 transition-all duration-300 hover:bg-brand-400 hover:shadow-glow active:scale-[0.98] sm:text-base;
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand px-6 py-3 text-sm font-bold text-ink-950 transition-all duration-300 hover:bg-brand-400 hover:shadow-glow active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-brand disabled:hover:shadow-none disabled:active:scale-100 sm:text-base;
 }
 
 .btn-ghost {
-  @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-ink-100 backdrop-blur transition-all duration-300 hover:border-brand/60 hover:bg-white/10 hover:text-white sm:text-base;
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-ink-100 backdrop-blur transition-all duration-300 hover:border-brand/60 hover:bg-white/10 hover:text-white disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:border-white/10 disabled:hover:bg-white/5 disabled:hover:text-ink-100 sm:text-base;
 }
 </style>

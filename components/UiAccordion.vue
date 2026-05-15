@@ -30,7 +30,7 @@ function toggle(index: number) {
     >
       <button
         type="button"
-        class="flex w-full items-center justify-between gap-3 px-4 py-4 text-right text-sm font-semibold text-white transition hover:bg-white/5 sm:text-base"
+        class="flex w-full items-center justify-between gap-3 px-4 py-4 text-right text-sm font-semibold text-white transition hover:bg-white/5 sm:text-base cursor-pointer"
         :aria-expanded="openIndex === index"
         :aria-controls="`${uid}-panel-${index}`"
         :id="`${uid}-trigger-${index}`"

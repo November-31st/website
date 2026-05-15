@@ -1,8 +1,25 @@
+const IRAJMIRZA_PWA_ORIGIN = "https://pwa.irajmirza.nov31st.online";
+
+export type IrajmirzaGameUtmContent = "hero" | "download";
+
 /**
- * لینک «ورود به بازی» (استور، وب، یا هر جایی که بازی منتشر می‌شود).
- * وقتی آدرس نهایی را داشتی همین‌جا را عوض کن.
+ * لینک «ورود به بازی» (PWA) با UTM برای آنالیتیکس.
+ * `utm_content` را برای هر دکمه جدا بگذار (مثلاً `hero`، `download`).
  */
-export const irajmirzaGameUrl = "https://pwa.irajmirza.nov31st.online";
+export function irajmirzaGamePlayUrl(
+  utmContent: IrajmirzaGameUtmContent = "hero"
+) {
+  const url = new URL(IRAJMIRZA_PWA_ORIGIN);
+  url.searchParams.set("utm_source", "nov31st");
+  url.searchParams.set("utm_medium", "website");
+  url.searchParams.set("utm_campaign", "irajmirza");
+  url.searchParams.set("utm_content", utmContent);
+  return url.toString();
+}
+
+/** صفحهٔ فهرست گوگل پلی؛ `id` را با شناسهٔ واقعیٔ اپ عوض کن. */
+export const irajmirzaGooglePlayUrl =
+  "https://play.google.com/store/apps/details?id=online.nov31st.irajmirza";
 
 /** کارت شناور کنار ماکت موبایل (مثل اعلان فیک). */
 export type IrajmirzaPhoneBubble = {
@@ -32,7 +49,7 @@ export type IrajmirzaAlternatingBlock = {
 
 export const irajmirzaAlternatingBlocks = [
   {
-    id: "feature-a",
+    id: "feature-no-guarantee",
     tag: "بدون ضمانت",
     titleBefore: "یک «تجربه» ساختیم که ",
     titleHighlight: "معلوم نیست چیه",
@@ -41,29 +58,29 @@ export const irajmirzaAlternatingBlocks = [
     /** ردیف دسکتاپ: ترتیب DOM همیشه متن → موبایل؛ این کلاس جهت flex را عوض می‌کند. */
     flexRowClass: "flex-row",
     bubble: null,
-    phoneInnerSrc: "/images/texture/carpet.png",
+    phoneInnerSrc: "/products/apps/irajmirza/screenshots/fal.webp",
     phoneInnerAlt: "تصویر نمونه در قاب موبایل",
     moreHref: "#faq",
     moreLabel: "بیشتر بدان که هنوز چیزی نمی‌دانی",
   },
   {
-    id: "feature-b",
-    tag: "هشدار مسخره",
-    titleBefore: "اعلان‌ها و ",
-    titleHighlight: "وسوسه‌های",
-    titleAfter: " وسط شب",
-    body: "یادآوری می‌فرستیم که «برگرد»، بعد خودمان هم نمی‌دانیم برای چه. اگر صدای اعلان اعصابت را خورد، تبریک؛ یعنی دقیقاً همان چیزی است که برنامه‌ریزی کرده بودیم. نه واقعاً، ولی خوب به نظر می‌رسد.",
+    id: "feature-adults-only",
+    tag: "نه برای بچه‌ها",
+    titleBefore: "فقط برای ",
+    titleHighlight: "بزرگسالان",
+    titleAfter: "",
+    body: "اینجا فحش جای شعر را گرفته و لحن تند است؛ برای مادر بزرگ، جلسهٔ خانوادگی و «بچه‌های بامزه» مناسب نیست. فکر می‌کنی با سن قانونی می‌توانی تحمل کنی؟ خوب، اولین کلمه سرت را گرم می‌کند.",
     flexRowClass: "flex-row-reverse",
     bubble: {
-      title: "یادآوری بی‌ربط",
-      body: "برگرد و وقتت را تلف کن. ما اینجاییم تا تشویق کنیم، نه نجات.",
-      icon: "lucide:bell",
+      title: "خلاصه برای عجول‌ها",
+      body: "زبان صریح است؛ اگر هنوز والدینت اسم اپ را از روی گوشی‌ات می‌خوانند، برگرد به تکالیف.",
+      icon: "lucide:shield-alert",
       positionClass: "",
     },
-    phoneInnerSrc: "/images/texture/carpet.png",
+    phoneInnerSrc: "/products/apps/irajmirza/screenshots/adults-only.webp",
     phoneInnerAlt: "تصویر نمونه در قاب موبایل",
-    moreHref: "#stories",
-    moreLabel: "نظرهای مضحک را ببین",
+    moreHref: "#faq",
+    moreLabel: "هنوز می‌خواهی؟ سوال‌ها را بخوان",
   },
 ] as const satisfies readonly IrajmirzaAlternatingBlock[];
 
@@ -116,14 +133,14 @@ export const irajmirzaFeatureCards = [
     body: "قرار بود «اعتیادآور» باشد. فعلاً فقط اعصاب‌ات را دوستانه امتحان می‌کند.",
   },
   {
-    icon: "lucide:music-2",
-    title: "صدا و تصویر",
-    body: "اگر چیزی گوش‌ات را اذیت کرد، احتمالاً عمدی بوده؛ وگرنه که اشتباه مهندسی است و ما آن را انکار می‌کنیم.",
+    icon: "lucide:volume-x",
+    title: "تصویر، بدون موسیقی",
+    body: "ساندترک نداریم؛ سکوت هم بخشی از تجربه است—یا حداقل کم بودجه‌ای ما. اگر چیزی دیدی که گیجت کرد، مقصر چشم‌هایت است.",
   },
   {
-    icon: "lucide:gift",
-    title: "رایگان بودن",
-    body: "فعلاً بله؛ یعنی تا وقتی کسی پول ندهد و ما را از این نمایش عمومی خلاص نکند.",
+    icon: "lucide:coins",
+    title: "سکه‌ها",
+    body: "مرحله را رد کن، سکه بگیر؛ بعضی قابلیت‌ها با همان سکه باز می‌شوند—نه با پول واقعی، با تلاش.",
   },
   {
     icon: "lucide:bug",
@@ -133,8 +150,8 @@ export const irajmirzaFeatureCards = [
 ] as const satisfies readonly IrajmirzaFeatureCard[];
 
 export const irajmirzaFeatureShowcasePhone = {
-  innerSrc: "/images/texture/rug.png",
-  innerAlt: "بافت نمونه در قاب موبایل",
+  innerSrc: "/products/apps/irajmirza/screenshots/seasons.webp",
+  innerAlt: "نمونه در قاب موبایل",
 } as const;
 
 export type IrajmirzaScreenshot = {
@@ -182,17 +199,22 @@ export const irajmirzaFaqItems = [
   {
     title: "این بازی دقیقاً چیست؟",
     content:
-      "یک چیز روی موبایل. بقیه‌اش را خودت کشف کن؛ ما هم اگر فهمیدیم بهت می‌گوییم.",
+      "ما کلمه می‌گذاریم، تو حروف را مثل نخ کاموا به هم می‌کشی تا بفهمی ما چه گفتیم. فکر می‌کنی ساده است؟ خوب، همان‌جا اشتباه می‌کنی.",
   },
   {
     title: "چرا اسم شاعر است؟",
     content:
-      "چون کسی فکر کرده جذاب است. اگر ناراحتی، نامه بنویس به همان کسی؛ ما فقط اینجا ایستاده‌ایم و قهوه می‌خوریم.",
+      "چون ایرج‌میرزا خودش هم تند زبان بود. اگر حس کردی شبیه همان بازی معروف حدس‌کلمه‌ای است که ازش پارودی ساخته‌ایم، حس درستی داری—فقط این‌جا رکیک‌تر است.",
+  },
+  {
+    title: "سکه‌ها چطور کار می‌کنند؟",
+    content:
+      "پول داخل بازی است: هر مرحله‌ای که رد کنی سکه می‌دهد؛ برای بعضی ویژگی‌ها همان سکه را خرج می‌کنی. از کیف پول واقعی چیزی کم نمی‌شود—فقط وقت و حوصله.",
   },
   {
     title: "پولی می‌شود؟",
     content:
-      "اگر بشود، اول خودمان می‌فهمیم. فعلاً بازی است؛ یعنی «رایگان تا وقتی که نشود».",
+      "نصب و بازی رایگان است؛ داخلش اقتصاد سکه داری. خرید با پول واقعی فعلاً بخشی از این داستان نیست—اگر روزی شد، خودمان هم تعجب می‌کنیم.",
   },
   {
     title: "پشتیبانی دارید؟",

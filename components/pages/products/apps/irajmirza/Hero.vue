@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import PhoneMockup from "./PhoneMockup.vue";
-import { irajmirzaGameUrl } from "@/constants/irajmirza";
+import {
+  irajmirzaGamePlayUrl,
+  irajmirzaGooglePlayUrl,
+} from "@/constants/irajmirza";
+
+const { isAndroidPlayCapable, playStoreDisabledBanter } =
+  useIrajmirzaGooglePlayCta();
 </script>
 
 <template>
   <section
     id="hero"
-    class="relative overflow-hidden border-b border-white/10 px-4 py-18 sm:px-6 sm:py-32"
+    class="relative overflow-hidden min-h-screen flex items-center border-b border-white/10 px-4 pt-18 sm:px-6 sm:pt-32"
   >
     <div
       aria-hidden="true"
@@ -26,24 +32,56 @@ import { irajmirzaGameUrl } from "@/constants/irajmirza";
         </UiEyebrow>
 
         <UiTitle variant="hero" class="mt-2 lg:text-[72px]">
-          ایرج‌<span class="text-brand">میرزا</span>
+          ایرج میرزا
         </UiTitle>
 
         <p class="mt-5 text-lg leading-8 text-ink-300">
-          اگر دنبال شاهکار هنری هفتمین قاره‌ی فرهنگی هستی، درِ اشتباهی زدی.
-          اینجا بیشتر شبیهِ وسوسه‌ی وسط شب است؛ دو دقیقه‌ی اول «اوه جالب»، بعد
-          یادت می‌آید فردا باید زود بیدار شوی.
+          اگر دنبال شاهکار ادبی هستی، در اشتباهی؛ اینجا حروف را به هم می‌کشی تا
+          کلمه‌ای را بفهمی که شاید بهتر بود نگویی. وسوسهٔ وسط شب، برای
+          بزرگسالانی که هنوز «فقط پنج دقیقه» را باور می‌کنند.
         </p>
 
         <div
-          class="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start"
+          class="mt-8 flex flex-wrap items-start justify-center gap-3 lg:justify-start"
         >
           <UiButton
-            :to="irajmirzaGameUrl"
+            :to="irajmirzaGooglePlayUrl"
+            :disabled="!isAndroidPlayCapable"
+            v-bind="
+              isAndroidPlayCapable
+                ? {
+                    external: true,
+                    target: '_blank',
+                    rel: 'noopener noreferrer',
+                  }
+                : {}
+            "
+            :title="
+              isAndroidPlayCapable
+                ? 'دانلود از گوگل پلی'
+                : 'گوگل پلی فقط روی اندروید'
+            "
+          >
+            دانلود از گوگل پلی
+            <Icon
+              v-if="isAndroidPlayCapable"
+              name="lucide:external-link"
+              class="size-4 shrink-0"
+            />
+            <Icon
+              v-else
+              name="lucide:ban"
+              class="size-4 shrink-0 stroke-[2.5]"
+              aria-hidden="true"
+            />
+          </UiButton>
+
+          <UiButton
+            :to="irajmirzaGamePlayUrl('hero')"
             external
             target="_blank"
             rel="noopener noreferrer"
-            title="ورود به بازی"
+            title="ورود به بازی (نسخهٔ وب)"
           >
             ورود به بازی
             <Icon name="lucide:external-link" class="size-4 shrink-0" />
@@ -57,20 +95,31 @@ import { irajmirzaGameUrl } from "@/constants/irajmirza";
             <Icon name="lucide:camera" class="size-4 shrink-0 stroke-[2.5]" />
           </UiButton>
         </div>
-
         <p
-          class="mt-6 inline-flex items-start justify-center gap-2 text-sm text-ink-500 lg:justify-end"
+          class="mt-6 inline-flex items-start justify-center gap-2 text-sm text-ink-400 lg:justify-end"
         >
-          <Icon
-            name="lucide:wifi-off"
-            class="mt-0.5 size-4 shrink-0 stroke-[2.5]"
-            aria-hidden="true"
-          />
-          <span class="text-right"> اگر نرفت، اینترنت مقصر است، نه ما. </span>
+          <template v-if="!isAndroidPlayCapable">
+            <Icon
+              name="lucide:ban"
+              class="mt-0.5 size-4 shrink-0 stroke-[2.5]"
+              aria-hidden="true"
+            />
+            {{ playStoreDisabledBanter }}
+          </template>
+          <template v-else>
+            <Icon
+              name="lucide:wifi-off"
+              class="mt-0.5 size-4 shrink-0 stroke-[2.5]"
+              aria-hidden="true"
+            />
+            <span class="text-right"> اگر نرفت، اینترنت مقصر است، نه ما. </span>
+          </template>
         </p>
       </div>
 
-      <PhoneMockup />
+      <PhoneMockup
+        inner-src="/products/apps/irajmirza/screenshots/level.webp"
+      />
     </div>
   </section>
 </template>
