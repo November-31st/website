@@ -17,7 +17,7 @@ function metroTileClass(index: number) {
 <template>
   <section
     id="screens"
-    aria-label="تصاویر کاربران با گوشی در موقعیت‌های مختلف"
+    aria-label="تصاویر بازی در کافه، اتوبوس، آشپزخانه، پارک و خوابگاه"
     class="scroll-mt-24 bg-ink-950 px-4 py-16 sm:px-6 sm:py-32"
   >
     <div class="container-page">
@@ -27,9 +27,9 @@ function metroTileClass(index: number) {
         </UiTitle>
         <p class="mx-auto mt-4 max-w-2xl text-ink-400 lg:mx-0">
           اینجا قرار نیست فقط پیکسل‌های UI را ببینی؛ می‌خواهیم ببینی بازی کجا
-          وسط روز مردم جا می‌گیرد — مترو، کافه، وسط حرف، وسط بی‌حوصلگی. چیدمان
-          زیر شبیه کاشی‌های استارت است: یکی بزرگ، چندتا کوچک، یکی پهن؛ عکس‌ها را
-          بعداً می‌گذاریم.
+          وسط روز مردم جا می‌گیرد — کافه وسط حرفی که جدی گرفته شد، اتوبوس شلوغ
+          برگشت، آشپزخانه حین انتظار غذا، نیمکت پارک نیمه‌خالی، و خوابگاه
+          نیمه‌شب زیر نور چراغ خوابگاه.
         </p>
       </div>
 
@@ -57,6 +57,11 @@ function metroTileClass(index: number) {
               decoding="async"
             />
             <div
+              v-if="shot.src"
+              aria-hidden="true"
+              class="screenshot-brand-tint pointer-events-none absolute inset-0"
+            />
+            <div
               v-else
               class="flex h-full w-full flex-col items-center justify-center gap-2 bg-linear-to-br from-ink-800/80 via-ink-900 to-ink-950 p-4 text-center sm:gap-3"
             >
@@ -77,7 +82,7 @@ function metroTileClass(index: number) {
           </div>
 
           <figcaption
-            class="pointer-events-none absolute inset-x-0 bottom-0 z-1 bg-linear-to-t from-ink-950 via-ink-950/90 to-transparent px-3 pb-2.5 pt-10 text-right text-xs font-medium leading-snug text-ink-100 sm:text-sm"
+            class="pointer-events-none absolute inset-x-0 bottom-0 z-1 bg-linear-to-t from-ink-950/70 via-ink-950/10 to-transparent px-3 pb-2.5 pt-10 text-right text-xs font-medium leading-snug text-ink-100 sm:text-sm"
           >
             {{ shot.situation }}
           </figcaption>
@@ -86,3 +91,26 @@ function metroTileClass(index: number) {
     </div>
   </section>
 </template>
+
+<style scoped>
+.screenshot-brand-tint {
+  background: linear-gradient(
+      145deg,
+      rgb(255 200 11 / 0.32) 0%,
+      rgb(255 200 11 / 0.14) 45%,
+      rgb(255 180 0 / 0.22) 100%
+    ),
+    radial-gradient(
+      ellipse 120% 80% at 50% 100%,
+      rgb(255 200 11 / 0.18),
+      transparent 70%
+    );
+  mix-blend-mode: soft-light;
+  opacity: 0.92;
+  transition: opacity 0.2s ease;
+}
+
+.group:hover .screenshot-brand-tint {
+  opacity: 1;
+}
+</style>

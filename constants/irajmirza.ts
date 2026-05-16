@@ -1,4 +1,8 @@
 const IRAJMIRZA_PWA_ORIGIN = "https://pwa.irajmirza.nov31st.online";
+const NOV31ST_WEBSITE_ORIGIN = "https://nov31st.online";
+
+/** تصویر Open Graph / Twitter Card (`public/products/apps/irajmirza/og.webp`). */
+export const irajmirzaOgImage = `${NOV31ST_WEBSITE_ORIGIN}/products/apps/irajmirza/og.webp`;
 
 export type IrajmirzaGameUtmContent = "hero" | "download";
 
@@ -99,7 +103,7 @@ export const irajmirzaTestimonials = [
     role: "قربانی دمو",
     quote:
       "فکر کردم ده دقیقه می‌مانم؛ سه ساعت بعد هنوز دارم به دیوار نگاه می‌کنم. پیشنهاد نمی‌کنم، ولی خودم دوباره نصب کردم.",
-    avatar: "/images/texture/ashtray.png",
+    avatar: "/products/apps/irajmirza/testimonials/t1.webp",
     stars: 5,
   },
   {
@@ -107,7 +111,7 @@ export const irajmirzaTestimonials = [
     role: "منتقد دلسوز",
     quote:
       "به دوستم گفتم هنر است. او خندید. الان رابطه‌مان سرد شده. حداقل بازی جالب بود.",
-    avatar: "/images/texture/steel_plate.png",
+    avatar: "/products/apps/irajmirza/testimonials/t2.webp",
     stars: 4,
   },
   {
@@ -115,7 +119,7 @@ export const irajmirzaTestimonials = [
     role: "بدون اختیار امضا",
     quote:
       "اگر باگی دیدید، ما هم دیدیم؛ فقط اولویت‌مان رفعِ باگ‌هایی است که جلوی قهوه‌مان را بگیرد.",
-    avatar: "/images/texture/copper_plate.png",
+    avatar: "/products/apps/irajmirza/testimonials/t3.webp",
     stars: 5,
   },
 ] as const satisfies readonly IrajmirzaTestimonial[];
@@ -169,24 +173,29 @@ export type IrajmirzaScreenshot = {
  */
 export const irajmirzaScreenshots: readonly IrajmirzaScreenshot[] = [
   {
+    src: "/products/apps/irajmirza/in_the_wild/cafe.webp",
     situation: "کافه، وسط حرفی که دیگران جدی گرفتند",
     alt: "دست روی میز کافه گوشی را نگه داشته؛ صفحهٔ بازی ایرج‌میرزا روشن است",
   },
   {
+    src: "/products/apps/irajmirza/in_the_wild/bus.webp",
     situation: "اتوبوس شلوغ، وسط راه برگشت",
     alt: "مسافر در اتوبوس با یک دست گوشی را گرفته و بازی را روی صفحه می‌بیند",
   },
   {
-    situation: "آشپزخانه، بین دو بار چای دم کشیدن",
-    alt: "کنار گاز و کتری، کاربر گوشی را در دست دارد و بازی باز است",
+    src: "/products/apps/irajmirza/in_the_wild/kitchen.webp",
+    situation: "آشپزخانه، حین انتظار آماده شدن غذا",
+    alt: "کنار گاز، کاربر گوشی را در دست دارد و بازی باز است",
   },
   {
-    situation: "نیمه‌شب، زیر نور کم‌رمز خوابگاه",
-    alt: "در تاریکی با نور ملایم صفحه، دست‌ها گوشی را نگه داشته‌اند و بازی دیده می‌شود",
-  },
-  {
+    src: "/products/apps/irajmirza/in_the_wild/park.webp",
     situation: "پارک نیمه‌خالی، روی نیمکت",
     alt: "روی نیمکت پارک نشسته و با هر دو دست گوشی را گرفته؛ صفحهٔ بازی در فضای باز",
+  },
+  {
+    src: "/products/apps/irajmirza/in_the_wild/dorm.webp",
+    situation: "نیمه‌شب، زیر نور چراغ خوابگاه",
+    alt: "در تاریکی با نور ملایم صفحه، دست‌ها گوشی را نگه داشته‌اند و بازی دیده می‌شود",
   },
 ];
 
