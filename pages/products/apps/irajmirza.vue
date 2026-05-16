@@ -10,6 +10,7 @@ import { irajmirzaOgImage } from "@/constants/irajmirza";
 
 useSeoMeta({
   title: "بازی موبایل ایرج میرزا - بنیاد نه چندان خیریه‌ی ۳۱ نوامبر",
+  ogTitle: "بازی موبایل ایرج میرزا - بنیاد نه چندان خیریه‌ی ۳۱ نوامبر",
   ogImage: irajmirzaOgImage,
   twitterImage: irajmirzaOgImage,
 });
