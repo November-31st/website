@@ -5,7 +5,7 @@ import {
   irajmirzaGooglePlayUrl,
 } from "@/constants/irajmirza";
 
-const { isAndroidPlayCapable, playStoreDisabledBanter } =
+const { isAndroid, isAndroidPlayCapable, playStoreDisabledBanter } =
   useIrajmirzaGooglePlayCta();
 </script>
 
@@ -59,6 +59,8 @@ const { isAndroidPlayCapable, playStoreDisabledBanter } =
             :title="
               isAndroidPlayCapable
                 ? 'دانلود از گوگل پلی'
+                : isAndroid
+                ? 'گوگل پلی هنوز اپ را قبول نکرده'
                 : 'گوگل پلی فقط روی اندروید'
             "
           >
@@ -98,22 +100,12 @@ const { isAndroidPlayCapable, playStoreDisabledBanter } =
         <p
           class="mt-6 inline-flex items-start justify-center gap-2 text-sm text-ink-400 lg:justify-end"
         >
-          <template v-if="!isAndroidPlayCapable">
-            <Icon
-              name="lucide:ban"
-              class="mt-0.5 size-4 shrink-0 stroke-[2.5]"
-              aria-hidden="true"
-            />
-            {{ playStoreDisabledBanter }}
-          </template>
-          <template v-else>
-            <Icon
-              name="lucide:wifi-off"
-              class="mt-0.5 size-4 shrink-0 stroke-[2.5]"
-              aria-hidden="true"
-            />
-            <span class="text-right"> اگر نرفت، اینترنت مقصر است، نه ما. </span>
-          </template>
+          <Icon
+            name="lucide:ban"
+            class="mt-0.5 size-4 shrink-0 stroke-[2.5]"
+            aria-hidden="true"
+          />
+          {{ playStoreDisabledBanter }}
         </p>
       </div>
 

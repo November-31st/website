@@ -1,5 +1,6 @@
 /**
- * تشخیص اندروید برای لینک زندهٔ گوگل پلی؛ بقیهٔ پلتفرم‌ها دکمهٔ غیرفعال + متن شوخ.
+ * دکمهٔ گوگل پلی: فعلاً غیرفعال (پلی اپ را قبول نکرده).
+ * روی اندروید پیام صریح؛ بقیهٔ پلتفرم‌ها متن شوخ «فقط اندروید».
  */
 export function useIrajmirzaGooglePlayCta() {
   const headers = useRequestHeaders(["user-agent"]);
@@ -10,10 +11,16 @@ export function useIrajmirzaGooglePlayCta() {
     return typeof h === "string" ? h : "";
   });
 
-  const isAndroidPlayCapable = computed(() => /Android/i.test(userAgent.value));
+  const isAndroid = computed(() => /Android/i.test(userAgent.value));
+
+  /** وقتی true باشد لینک پلی فعال است؛ فعلاً همیشه false. */
+  const isAndroidPlayCapable = computed(() => false);
 
   const playStoreDisabledBanter = computed(() => {
     const ua = userAgent.value;
+    if (isAndroid.value) {
+      return "گوگل پلی هنوز اپ ما را قبول نکرده؛ لطفاً از «ورود به بازی» (وب) استفاده کن.";
+    }
     if (!ua) {
       return "اندرویدی؟ رفرش؛ نیستی؟ دکمه‌ی بدون باطری است.";
     }
@@ -23,5 +30,5 @@ export function useIrajmirzaGooglePlayCta() {
     return "موس موبایل نیست؛ یا اندروید بخر، یا «ورود به بازی» را بزن.";
   });
 
-  return { isAndroidPlayCapable, playStoreDisabledBanter };
+  return { isAndroid, isAndroidPlayCapable, playStoreDisabledBanter };
 }

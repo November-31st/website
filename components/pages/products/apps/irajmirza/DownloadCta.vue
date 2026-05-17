@@ -4,7 +4,7 @@ import {
   irajmirzaGooglePlayUrl,
 } from "@/constants/irajmirza";
 
-const { isAndroidPlayCapable, playStoreDisabledBanter } =
+const { isAndroid, isAndroidPlayCapable, playStoreDisabledBanter } =
   useIrajmirzaGooglePlayCta();
 
 const quickFacts = [
@@ -15,9 +15,9 @@ const quickFacts = [
   },
   {
     icon: "lucide:smartphone",
-    label: "اندروید؟ پلی‌استور",
+    label: "اندروید؟ فعلاً وب",
     value:
-      "روی اندروید از گوگل پلی نصب می‌شود؛ روی آیفون و دسکتاپ فعلاً فقط وب، اپ‌استور اگر بیاید بعداً خبرش را می‌دهیم.",
+      "گوگل پلی هنوز اپ را قبول نکرده؛ روی اندروید همان «ورود به بازی» را بزن. آیفون و دسکتاپ هم فقط وب؛ اپ‌استور اگر بیاید بعداً خبرش را می‌دهیم.",
   },
   {
     icon: "lucide:shield-alert",
@@ -63,9 +63,9 @@ const quickFacts = [
             <p
               class="mx-auto mt-5 max-w-xl text-base leading-8 text-ink-200 sm:text-lg lg:mx-0"
             >
-              همین‌جا مسیر بازی است؛ اندروید را از پلی بگیر، بقیه وب؛ بدون فیلم
-              سینمایی، بدون قول «فردا جهان عوض می‌شود». فقط یک تب جدید که شاید
-              ببندی قبل از این‌که بفهمی چرا.
+              همین‌جا مسیر بازی است؛ اندروید و بقیه فعلاً از وب؛ پلی وقتی قبول
+              کرد خبر می‌دهیم؛ بدون فیلم سینمایی، بدون قول «فردا جهان عوض
+              می‌شود». فقط یک تب جدید که شاید ببندی قبل از این‌که بفهمی چرا.
             </p>
 
             <div
@@ -87,6 +87,8 @@ const quickFacts = [
                   :title="
                     isAndroidPlayCapable
                       ? 'دانلود از گوگل پلی'
+                      : isAndroid
+                      ? 'گوگل پلی هنوز اپ را قبول نکرده'
                       : 'گوگل پلی فقط روی اندروید'
                   "
                 >
@@ -104,7 +106,6 @@ const quickFacts = [
                   />
                 </UiButton>
                 <p
-                  v-if="!isAndroidPlayCapable"
                   class="text-right text-xs leading-relaxed text-ink-400 sm:text-sm"
                 >
                   {{ playStoreDisabledBanter }}
