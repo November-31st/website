@@ -90,7 +90,7 @@ import { toFarsiIndex } from "@/utils/farsi";
             class="flex items-center justify-between border-t border-white/5 mt-6 pt-5"
           >
             <span class="text-[11px] text-ink-400">
-              {{ toFarsiIndex(i + 1) }} / {{ toFarsiIndex(services.length) }}
+              {{ toFarsiIndex(services.length) }} / {{ toFarsiIndex(i + 1) }}
             </span>
             <NuxtLink
               to="/#contact"
